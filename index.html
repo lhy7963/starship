@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Black+Han+Sans&family=Noto+Sans+KR:wght@400;700&family=Noto+Sans+Mono:wght@100;400;600;900&display=swap" rel="stylesheet">
+<style type="text/css">
+	html {font-family: 'Bebas Neue', cursive;
+font-family: 'Black Han Sans', sans-serif;
+font-family: 'Noto Sans KR', sans-serif;
+font-family: 'Noto Sans Mono', monospace; background-color: white; color: black; text-align: center;}
+	button {width: 200px; height: 100px; background-color: white; opacity:80%; position: relative; text-align: center; z-index: 300;  align-content: center; border-radius: 15px; box-shadow: 5px 5px 20px; font-family: 'Black Han Sans'; font-size: 36px; margin-bottom: 100px;}
+	iframe{position: absolute; left: 10px; top:10px;}
+	section{width: auto; height:600px; display: flex; justify-content: space-around;}
+	p{font-family: 'Noto Sans Mono', monospace; font-size: 16px;}
+
+
+		.flower{position: absolute; left: 0;top: 0;}
+		#poetText{z-index: 400; position: relative; text-align: center; font-size: 32px; font-family: 'Noto Sans KR'; font-weight: 700;}
+		.word{opacity:0; animation: fadein 1s forwards ;}
+		@keyframes fadein {
+			to {opacity: 1;}
+		}
+		.earth{background-color: white;  opacity: 80%; margin-top: 50px; height: 450px; position: relative; text-align: center; z-index: 300; align-content: center; border-radius: 30px; box-shadow: 5px 5px 20px; font-family: 'Black Han Sans'; font-size: 72px; margin-bottom: 80px;}
+		#innerEarth{opacity: 100%; color: #2828cd;}
+		#twinkle{width: 100px; height:auto;}
+		#boldText{font-family: 'Bebas Neue', cursive; font-size: 72px; background-color: white; margin: 0;}
+		#demo{z-index: 500; font-family: 'Black Han Sans', sans-serif; font-size: 70px;}
+		.box{background-color: white;  opacity: 80%; width: 400px; height: 500px; border-radius: 10px; box-shadow: 5px 5px 20px;}
+		.inBox {margin-top: 20px; width: 300px; height: auto; }
+		.number{font-family: 'Black Han Sans', sans-serif; font-size: 40px;}
+	</style></head>
+
+
+
+
+<body>
+	<p id=boldText>
+	<MARQUEE behavior="scroll" bgColor="#2828cd", scrolldelay="0.1">Starship Enterprise Starship Enterprise Starship Enterprise Starship Enterprise Starship Enterprise Starship Enterprise Starship Enterprise Starship Enterprise Starship Enterprise Starship Enterprise Starship Enterprise Starship Enterprise</MARQUEE>
+    </p>
+
+
+	<div class="earth" >
+		<iframe width="65" height="100" scrolling="no" frameborder="yes" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/762398251&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+
+		<div id="innerEarth">
+			<img src="twinkle.gif" id="twinkle">
+			스타쉽 엔터프라이즈
+			<img src="twinkle.gif" id="twinkle">
+		</div>
+
+		<div id=poetText></div>
+	</div>
+
+
+
+	<div>
+		<button onclick="document.getElementById('demo').innerHTML = getRndInteger(0,10)" id="startBut"> GO!
+		</button>
+
+		<p id="demo">번호에 따라 아래의 카드를 확인해보세요!</p>
+	</div>
+
+	<section>
+		
+		<div class="box">
+			<p class="number">1</p>
+			<img class="inBox" src="andro.jpg">
+			<p>M31<br>안드로메다은하<br>00h 42m 44.3s<br>+41° 16′ 9″<br>안드로메다자리</p>
+		</div>
+    	<div class="box">
+    		<p class="number">2</p>
+    		<img class="inBox" src="sun.jpg">
+			<p>G2V형 주계열성<br>1 AU<br>황도면 기준 7.25°<br>은하면 기준 67.23°<br>태양</p>
+    	</div>
+    	<div class="box">
+    		<p class="number">3</p>
+    		<img class="inBox" src="mercury.jpg">
+    		<p>내행성-지구형 행성<br>0.387 098 AU<br>황도면 기준 7.005°<br>태양 적도 기준 3.38° <br>수성</p>
+			
+    	</div>
+
+	</section>
+ 
+
+	<p id=boldText>
+	<MARQUEE bgColor="#2828cd", scrolldelay="0.1">Starship Enterpraise Starship Enterpraise Starship Enterpraise Starship Enterpraise</MARQUEE>
+    </p>
+
+
+	
+	<script type="text/javascript"> 
+			var a = ["planet", "planet2", "planet3", "planet4", "planet5" ];
+
+	/*	a[0] a[1] a[2] */
+
+
+		for (var i=0;i<100;i++){
+	var t = document.createElement("img");
+		t.src = a[randomBH(0,4)] + ".gif";
+		t.className = "flower";
+		t.style.width = randomBH(30,300) + "px";
+		t.style.height = "auto";
+		t.style.left = Math.random()*screen.availWidth +  "px";
+		t.style.top = Math.random()*screen.availHeight +  "px";
+		document.body.appendChild(t);
+		}
+
+
+		var poet = "지금 이 시각 우주에서는... <br>당신을 위한 우주 관광 카탈로그가 준비되어 있습니다!<br> 어디로 갈지 잘 모르겠다고요?<br> 걱정하지 마세요!<br> 스타쉽 엔터프라이즈는 당신에게 랜덤 여행지에 대한 정보를 제공합니다.<br> 아래의 버튼을 눌러 지금 당장 여행지를 찾아보세요! "
+		var poetArr = poet.split(" ");
+
+		var myTimer = setInterval(print,500);
+		var s=0;
+		function print(){
+			var t = document.createElement("span");
+			t. innerHTML = poetArr[s] + " ";
+			t.className = "word";
+			s++;
+			poetText.appendChild(t);
+			if(s == poetArr.length){
+				clearInterval(myTimer);
+			}
+		}
+
+		function randomBH(min, max) {
+		  min = Math.ceil(min);
+		  max = Math.floor(max);
+		  return Math.floor(Math.random() * (max - min + 1)) + min;
+		}
+
+		function getRndInteger(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+	</script>
+
+
+</body>
+</html>
